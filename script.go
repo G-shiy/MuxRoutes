@@ -8,7 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Uso: go run script.go [up|down|reload]")
+		fmt.Println("Use: ./script [up|down|reload]")
 		os.Exit(1)
 	}
 
@@ -23,7 +23,7 @@ func main() {
 		runCommand("docker-compose", "down")
 		runCommand("docker-compose", "up", "-d")
 	default:
-		fmt.Println("Comando inválido. Use: up, down ou reload")
+		fmt.Println("Invalid command. Use: up, down or reload")
 	}
 }
 
@@ -33,7 +33,7 @@ func runCommand(command string, args ...string) {
 	cmd.Stderr = os.Stderr
 
 	if err := cmd.Run(); err != nil {
-		fmt.Printf("Erro ao executar o comando %s: %v\n", command, err)
+		fmt.Printf("Error executing command%s: %v\n", command, err)
 		os.Exit(1)
 	}
 }
