@@ -8,7 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Uso: go run main.go [up|down|reload]")
+		fmt.Println("Uso: go run script.go [up|down|reload]")
 		os.Exit(1)
 	}
 
